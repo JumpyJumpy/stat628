@@ -1,7 +1,7 @@
 # STAT 628 Module 2
 
 ## Objective  
-The project aims to build a simple and robust model to accurate
+The project aims to build a simple and robust model to accuratly predict one's body fat percentage after inputing some necessary data.
 
 
 ## Data  
