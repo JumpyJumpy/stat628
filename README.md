@@ -10,4 +10,6 @@ The data is in [data](https://github.com/JumpyJumpy/stat628-module2/tree/master/
 
 ## Code  
 Codes are in [code](https://github.com/JumpyJumpy/stat628-module2/tree/master/code) folder. Codes used for cleaning the data and analysis were writen in R. Raw codes are in [`BodyFat.R`](https://github.com/JumpyJumpy/stat628-module2/blob/master/code/BodyFat.R). Or 
+
+
 Note: R package `tidyverse`, `car`, `ggplot2` and `MASS` are required to run `BodyFat2.R`.
