@@ -19,7 +19,7 @@ BodyFat_cleaned <-
 ## initial model
 lm_model1 <- lm(BODYFAT ~ . , data = BodyFat_cleaned)
 summary(lm_model1)
-corr <- cor(BodyFat_cleaned[, -1]) ## notice
+corr <- cor(BodyFat_cleaned[, -1]) ## notice strong correlation on weight with other terms
 vif(lm_model1) ## weight is dropped due to high vif
 head(BodyFat_cleaned)
 
