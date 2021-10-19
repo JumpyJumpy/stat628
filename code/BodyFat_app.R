@@ -12,7 +12,7 @@ ui <- fluidPage(
     # Sidebar with a slider input for number of bins 
     sidebarLayout(position = "left",
                   sidebarPanel(
-                      radioButtons()("Lengthunit", "Prefer Lenth Units:", list("cm" = "cm","inch" = "inch")),
+                      radioButtons()("Lengthunit", "Unit:", list("cm" = "cm","inch" = "inch")),
 
                       numericInput("Abdomen", "Abdomen Circumference:", min = 20, max = 200, value = NA),
                       helpText("Your Abdomen Circumference should be between 20 to 200cm"),
