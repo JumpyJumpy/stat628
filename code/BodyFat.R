@@ -61,7 +61,7 @@ plot(final_4, ask = F)
 
 
 
-
+## plot leverage points and influential points
 final <- list(final_3, final_4)
 
 for (i in 1:2) {
