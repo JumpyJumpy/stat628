@@ -150,7 +150,7 @@ server <- function(input, output) {
           <br>
           Haoyue Shi hshi87@wisc.edu;
           
-          Yijin Guan yjuan37@wisc.edu;
+          Yijin Guan yguan37@wisc.edu;
           
           Zihan Zhao zzhao387@wisc.edu;
           
