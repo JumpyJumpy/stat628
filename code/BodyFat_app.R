@@ -137,7 +137,7 @@ server <- function(input, output) {
     })
     
     output$AC <- renderTable(
-        web.data<-data.frame(Describetion=c('Essential fat', 'Athletes','Fitness','Average','Obese'),
+        web.data<-data.frame(Description=c('Essential fat', 'Athletes','Fitness','Average','Obese'),
                              #Women=c('10-13%','14-20%','21-24%','25-31%','32+%'),
                              Men=c('2-6%','6-14%','14-18%','18-25%','25+%')
         )
