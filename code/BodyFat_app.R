@@ -12,7 +12,7 @@ ui <- fluidPage(
     # Sidebar with a slider input for number of bins 
     sidebarLayout(position = "left",
                   sidebarPanel(
-                      radioButtons()("Lengthunit", "Unit:", list("cm" = "cm","inch" = "inch")),
+                      radioButtons("Lengthunit", "Lenth Units Preference:", list("cm" = "cm","inch" = "inch")),
 
                       numericInput("Abdomen", "Abdomen Circumference:", min = 20, max = 200, value = NA),
                       helpText("Your Abdomen Circumference should be between 20 to 200cm"),
@@ -35,9 +35,15 @@ ui <- fluidPage(
                             htmlOutput("Introduction"),
                             h1("Your body fat percentage is:",style = "font-size:120%"),
                             textOutput("results"),
+                            tags$head(tags$style("#results{color: red;
+                                 font-size: 120%;
+                                 font-style: italic;
+                                 }"
+                            )
+                            ),
                             plotOutput(outputId="PiePlot"),
                             h1("The American Council on Exercise Body Fat Categorization:",style = "font-size:120%"),
-                            htmlOutput("AC"),
+                            tableOutput("AC"),
                             h1("Contact Information",style = "font-size:120%"),
                             htmlOutput("ContactInformation")
                   #仪表盘
@@ -52,7 +58,7 @@ server <- function(input, output) {
     # model BODYFAT ~ ABDOMEN + HEIGHT + WRIST +AGE
     # unit lb and cm
     
-    OutType <- reactive({
+    OutType <- eventReactive(input$calculate,{
         
         # OriginData=c(input$Abdomen,input$Height, input$Wrist, input$Age)
         OriginData=c(input$Abdomen,input$Height, input$Wrist)
@@ -84,7 +90,7 @@ server <- function(input, output) {
         # else if (d[5] < 15 | d[5] > 100){
         #     OutType = 'E'     
         # }    # age
-        else if(bodyfat<0 | bodyfat>60){
+        else if(bodyfat<0 | bodyfat>50){
             OutType = 'F'             
         }
         else{
@@ -94,6 +100,7 @@ server <- function(input, output) {
     })
     
     output$results <- renderText({
+        input$calculate
         if(OutType()!='A' & OutType()!='B' & OutType()!='C' & OutType()!='D' & OutType()!='E' &OutType()!='F'){
             bodyfat=OutType()
             paste(bodyfat,"%")
@@ -115,7 +122,7 @@ server <- function(input, output) {
         # }
         else if (OutType() == 'F'){
             paste("It seems that the bodayfat calculated from the data you input is an extreme value, which
-                  is smaller than 0% or bigger than 60%. Please check.")
+                  is smaller than 0% or bigger than 50%. Please check.")
         }
     })
 
@@ -129,17 +136,31 @@ server <- function(input, output) {
          ')
     })
     
-    output$AC <- renderUI({
-        HTML('换成表格
-         ')
-    })
+    output$AC <- renderTable(
+        web.data<-data.frame(Describetion=c('Essential fat', 'Athletes','Fitness','Average','Obese'),
+                             #Women=c('10-13%','14-20%','21-24%','25-31%','32+%'),
+                             Men=c('2-6%','6-14%','14-18%','18-25%','25+%')
+        )
+                             
+    )
     
     output$ContactInformation <- renderUI({
-        HTML('If you have any questions, please contact: HAOYUE SHI hshi87@wisc.edu +邮箱
+        HTML('<br>
+          If you have any questions, please contact: <br> 
+          <br>
+          Haoyue Shi hshi87@wisc.edu;
+          
+          Yijin Guan yjuan37@wisc.edu;
+          
+          Zihan Zhao zzhao387@wisc.edu;
+          
+          Shubo Lin slin268@wisc.edu;
+         
          ')
     })
     
     output$PiePlot <- renderPlot({
+        input$calculate
         if(OutType()!='A' & OutType()!='B' & OutType()!='C' & OutType()!='D' & OutType()!='E' &OutType()!='F'){
             x=OutType()
         }
@@ -192,6 +213,7 @@ server <- function(input, output) {
             gg.gauge(x)
     })
 }
+
 
 # Run the application 
 shinyApp(ui = ui, server = server)
