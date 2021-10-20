@@ -15,7 +15,8 @@ Note: R package `tidyverse`, `car`, `ggplot2` and `MASS` are required to run `Bo
 ## How to use
 Shiny Application: You can run `BodyFat_app.R`, or on https://wangcongming95.shinyapps.io/test/.
 ## Questions
-Haoyue Shi hshi87@wisc.edu  
-Yijin Guan yguan37@wisc.edu  
-Zihan Zhao zzhao387@wisc.edu   
-Shubo Lin slin268@wisc.edu  
+If you have any questions, please contact:
+    Haoyue Shi hshi87@wisc.edu  
+    Yijin Guan yguan37@wisc.edu  
+    Zihan Zhao zzhao387@wisc.edu   
+    Shubo Lin slin268@wisc.edu  
