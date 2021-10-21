@@ -46,8 +46,6 @@ ui <- fluidPage(
                             tableOutput("AC"),
                             h1("Contact Information",style = "font-size:120%"),
                             htmlOutput("ContactInformation")
-                  #仪表盘
-                  #美国IC建议
                   )
     )
 )
