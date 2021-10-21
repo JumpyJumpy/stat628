@@ -13,8 +13,8 @@ Codes are in [code](https://github.com/JumpyJumpy/stat628-module2/tree/master/co
 Note: R package `tidyverse`, `car`, `ggplot2` and `MASS` are required to run `BodyFat2.R` and make sure that there is a `data` subdirectory containing `BodyFat.csv` (i.e. `"./data/BodyFat.csv"`) in the working directory when running `BodyFat2.R`.
 
 ## How to use
-R codes: All R file can be run directly without spcifying certian working directory.
-Shiny Application: You can run `BodyFat_app.R`, or on https://wangcongming95.shinyapps.io/test/.
+- R codes: All R file can be run directly without spcifying certian working directory.  
+- Shiny Application: You can run `BodyFat_app.R`, or on https://wangcongming95.shinyapps.io/test/.
 ## Questions
 If you have any questions, please contact:  
 - Haoyue Shi hshi87@wisc.edu  
