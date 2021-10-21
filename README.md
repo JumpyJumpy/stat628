@@ -12,7 +12,7 @@ Codes are in [code](https://github.com/JumpyJumpy/stat628-module2/tree/master/co
 - See [`BodyFat.R`](https://github.com/JumpyJumpy/stat628-module2/blob/master/code/BodyFat.R) for raw codes, or the jupyter notebook version of the codes [`BodyFat.ipynb`](https://github.com/JumpyJumpy/stat628-module2/blob/master/code/BodyFat.ipynb) for codes with output of each step.  
 - [`BodyFat_app.R`](https://github.com/JumpyJumpy/stat628-module2/blob/master/code/BodyFat_app.R) will generate a local web-based body fat percentage calculator based on `Shiny`. One can also access the online version at https://wangcongming95.shinyapps.io/test/.  
 
-Note: R package `tidyverse`, `car`, `ggplot2` and `MASS` are required to run `BodyFat2.R` and make sure that there is a `data` subdirectory containing `BodyFat.csv` (i.e. `"./data/BodyFat.csv"`) in the working directory when running `BodyFat2.R`.
+Note: R package `tidyverse`, `car`, `ggplot2` and `MASS` are required to run `BodyFat2.R` and `shiny` for `BodyFat_app.R`
 
 ## How to use
 - R codes: All R files can be run directly without spcifying any working directory.  
