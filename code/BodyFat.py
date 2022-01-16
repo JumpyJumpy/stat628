@@ -32,9 +32,9 @@ bodyfat_lasso = LassoLarsIC(criterion = "bic", verbose = True).fit(X = bodyfat.d
                                                                    y = bodyfat["BODYFAT"])
 bodyfat_lasso.coef_
 selected_features_lasso_bic = bodyfat.drop(columns = ["BODYFAT"]).columns[bodyfat_lasso.coef_ != 0]
+coef_laso = bodyfat_lasso.coef_[bodyfat_lasso.coef_ != 0]
 bodyfat_lasso.score(X = bodyfat.drop(columns = ["BODYFAT"]), y = bodyfat["BODYFAT"])
-lass_coef = {selected_features_lasso_bic[i]: bodyfat_lasso.coef_[i] for i in range(len(bodyfat_lasso.coef_)) if
-             bodyfat_lasso.coef_[i] != 0}
+lass_coef = {selected_features_lasso_bic[i]: coef_laso[i] for i in range(len(coef_laso))}
 
 bodyfat_final = LinearRegression().fit(X = bodyfat[selected_features_lasso_bic], y = bodyfat["BODYFAT"])
 bodyfat_final.coef_
